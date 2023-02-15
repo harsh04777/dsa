@@ -1,0 +1,23 @@
+//armstrong no
+#include<iostream>
+using namepsce std;
+int main(){
+int n;
+cin>>n;
+int original=n;
+int sum=0;
+
+while(n>0){
+int lastdigit= n%10;
+sum+= pow(lastdigits,3);
+n=n/10;
+}
+if(sum==original){
+cout<<"armstrong"<<endl;
+}
+else{
+cout<<"not a armstrong"<<endl;
+}
+};
+
+
