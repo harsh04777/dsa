@@ -1,5 +1,6 @@
 //armstrong no
 #include<iostream>
+<include math.h>
 using namepsce std;
 int main(){
 int n;
@@ -18,6 +19,7 @@ cout<<"armstrong"<<endl;
 else{
 cout<<"not a armstrong"<<endl;
 }
-};
+return 0;
+}
 
 
