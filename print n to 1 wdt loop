@@ -1,0 +1,16 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+class Solution {
+  public:
+    void printNos(int N) {
+        if(N==0) return;
+        cout<<N<<" ";
+        printNos(N-1);
+        
+        
+    }
+};
