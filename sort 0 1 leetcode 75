@@ -1,0 +1,18 @@
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+         int low = 0, mid = 0, high = nums.size() - 1;
+        while(mid <= high) {
+            if(nums[mid] == 0) {  // agr mid 0 h toh swap kardo low k sath
+                swap(nums[low], nums[mid]);
+                low++;
+                mid++;
+            } else if(nums[mid] == 1) {//agar 1 h toh bas mid ko badha do
+                mid++;
+            } else {// agar 2 aata h toh high or mid ko swap
+                swap(nums[mid], nums[high]);
+                high--;
+            }
+        }
+    }
+};
