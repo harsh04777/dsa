@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int slow=nums[0];
+        int fast =nums[0];
+        do{
+            slow= nums[slow];//slow ko ek kadam aagey bahayenge
+            fast =nums[nums[fast]];//fast ko 2 kadam agey badaheyenge
+        }while(slow!=fast);//jab tak dono equal nhi hota tabtak.
+        
+        fast=nums[0];// fast ko firse first postn p daldenge
+        while(slow!=fast){// jab tak dono equal nhi hota tabtak ...
+            slow=nums[slow];// ek kadam aagey badhayege
+            fast=nums[fast];//ek kadam fast bhi aagey badhayenge
+        }
+        return slow;// dono jab equal hojayenge humko apna duplicate miljayga
+        
+    }
+};
