@@ -1,0 +1,45 @@
+class Solution{
+    
+    public:
+    vector<int> leaders(int a[], int n){
+        vector<int>ans;
+        int maxi= INT_MIN;
+        for(int i=n-1;i>=0;i--){
+            if(a[i]>=maxi){
+                ans.push_back(a[i]);
+            }
+            maxi= max(a[i],maxi);
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+        
+        
+    }
+};
+// Let's take an example to understand the steps of the code.
+
+Input: a = [16, 17, 4, 3, 5, 2]
+
+Initialize an empty vector ans to store the leaders.
+Initialize maxi variable with the minimum possible integer value (INT_MIN), let's say -2147483648, to keep track of the maximum element encountered so far.
+Start iterating the array from the rightmost element (index n-1) to the leftmost element (index 0).
+For the first iteration:
+i = 5 (index of element 2).
+Since 2 is greater than or equal to -2147483648 (current maxi value), it is a leader. Add it to the ans vector: ans = [2].
+Update maxi to the maximum of -2147483648 and 2, which is 2: maxi = 2.
+For the second iteration:
+i = 4 (index of element 5).
+Since 5 is greater than or equal to 2 (current maxi value), it is a leader. Add it to the ans vector: ans = [2, 5].
+Update maxi to the maximum of 2 and 5, which is 5: maxi = 5.
+Repeat the process for the remaining elements of the array.
+For i = 3, a[i] = 3 is not greater than or equal to 5, so it is not a leader. Skip it.
+For i = 2, a[i] = 4 is not greater than or equal to 5, so it is not a leader. Skip it.
+For i = 1, a[i] = 17 is greater than or equal to 5, so it is a leader. Add it to the ans vector: ans = [2, 5, 17].
+Update maxi to the maximum of 5 and 17, which is 17: maxi = 17.
+For i = 0, a[i] = 16 is not greater than or equal to 17, so it is not a leader. Skip it.
+Reverse the elements in the ans vector: ans = [17, 5, 2].
+Return the ans vector containing the leaders: [17, 5, 2].
+So, in this example, the leaders in the array [16, 17, 4, 3, 5, 2] are [17, 5, 2]. The code iterates over the array from right to left, adds the leaders to the ans vector, and reverses it to obtain the final result.
+
+
+
