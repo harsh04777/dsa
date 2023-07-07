@@ -1,0 +1,39 @@
+
+class Solution
+{
+    public:
+    //Function to sort an array using quick sort algorithm.
+    void quickSort(int arr[], int low, int high)
+    {
+        if(low<high){
+            int p=partition(arr, low, high);
+            quickSort(arr, low, p-1);// jan partition k baad subaarays nikal k aayenge tab 
+            quickSort(arr, p+1, high);//low to pivot aur pivot ko high
+        }
+        // code here
+    }
+    
+    public:
+    int partition (int arr[], int low, int high)
+    {
+        int pivot=low;
+        int i=low;
+        int j=high;
+       while(i<j){
+           if(arr[i]<=arr[pivot]){
+               i++;
+           }
+           while(arr[j]>arr[pivot]){
+               j--;
+           }
+           if(i<j){
+               swap(arr[j],arr[i]);// i aur j ko swap
+           }
+           
+        }
+       swap(arr[j],arr[pivot]);// i aur j cross kar liye toh pivot ko j k sath swap karlo
+       return j;
+    }
+};
+
+
